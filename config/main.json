@@ -3,6 +3,7 @@
   "pullRequests": {
     "allowedActions": ["opened", "synchronize"],
     "allowedExtensions": [".js", ".json"],
+    "disAllowedExtensions": [".zip"],
     "excludedPaths": ["^test"],
     "updateGithubStatus": true
   },
