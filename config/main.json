@@ -3,8 +3,9 @@
   "pullRequests": {
     "allowedActions": ["opened", "synchronize"],
     "allowedExtensions": [".js", ".json"],
+    "allowedPrefixRegex": "^.env.*",
     "disAllowedExtensions": [".zip"],
-    "excludedPaths": ["^test"],
+    "excludedPaths": ["^test", "^node_modules"],
     "updateGithubStatus": true
   },
   "runTriggers": true,
