@@ -16,14 +16,18 @@ module.exports = {
       return [];
     }
 
-    const ext = path.parse(metadata.filename).ext;
+    const fileObj = path.parse(metadata.filename);
+    const ext = fileObj.ext;
     const issues = [];
     let set = getSet(ext);
 
     if (set.length === 0) {
       // See if the "any file" filter is in use
-
-      set = getSet('*');
+      if (fileObj.name.startsWith('.env')){
+        set = getSet('env');
+      }else{
+        set = getSet('*');
+      }
     }
 
     if (set.length === 0) {

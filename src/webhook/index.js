@@ -13,9 +13,9 @@ module.exports = ({
       const paths = config.pullRequests.excludedPaths;
       const prefix = config.pullRequests.allowedPrefixRegex
       const files = resp.data.filter(file => {
-                                      const file = path.parse(file.filename)
-                                      const matchExt = exts.includes(file.ext)
-                                      const matchPrefix = (file.name.match(RegExp(prefix)) || "").length > 0
+                                      const fileObj = path.parse(file.filename)
+                                      const matchExt = exts.includes(fileObj.ext)
+                                      const matchPrefix = (fileObj.name.match(RegExp(prefix)) || "").length > 0
                                       return matchExt || matchPrefix
                                     })
                         .filter((file) => {
