@@ -11,15 +11,15 @@ Serverless tool that detects secrets and passwords in your pull requests - one f
 ## Requirement ENV
 - **`GITHUB_TOKEN`**
 
-    github read repo token
+    Github read repo token
 
 - **`JWT_SECRET`**
 
-    20 char random string for github generate repo use
+    Secret for github access this service
 
 - **`SLACK_INCOMING_WEBHOOK_URL_REPO_SUPERVISOR`**
 
-    slack incomming webhook url
+    Slack incomming webhook url
 
 ## Custom support extension
 
