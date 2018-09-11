@@ -4,7 +4,6 @@
     "allowedActions": ["opened", "synchronize"],
     "allowedExtensions": [".js", ".json"],
     "allowedPrefixRegex": "^.env.*",
-    "disAllowedExtensions": [".zip"],
     "excludedPaths": ["^test", "^node_modules"],
     "updateGithubStatus": true
   },
