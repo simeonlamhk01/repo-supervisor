@@ -8,10 +8,6 @@ module.exports = (message) => {
     text: message
   });
 
-  if (!slackWebhookUri) {
-    throw new Error('slack webhook url missing');
-  }
-
   const options = {
     method: 'POST',
     uri: config.SlackURL,
