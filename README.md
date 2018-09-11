@@ -17,7 +17,7 @@ Serverless tool that detects secrets and passwords in your pull requests - one f
 
     Secret for github access this service
 
-- **`SLACK_INCOMING_WEBHOOK_URL_REPO_SUPERVISOR`**
+- **`.config.json`**
 
     Slack incomming webhook url
 
