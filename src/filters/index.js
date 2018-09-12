@@ -1,15 +1,6 @@
 import path from 'path';
 import filtersList from './../../config/filters.json';
 
-function getSet(ext) {
-  const set = filtersList.filter(f => f.ext === ext);
-
-  if (set.length > 1) {
-    throw new Error(`More than one object for the same extension "${ext}" specified in a config/filters.json.`);
-  }
-  return set;
-}
-
 module.exports = {
   processFile: (metadata, fileContent, isPlainFile) => {
     if (!fileContent || fileContent.length === 0) {
@@ -20,7 +11,7 @@ module.exports = {
     const filename = path.parse(metadata.filename).name;
 
     const issues = [];
-    let set = filtersList.filter(f => f.ext === ext || ( filename.match('^.env.*') && f.ext === 'env') );
+    let set = filtersList.filter(f => f.ext === ext || (filename.match('^.env.*') && f.ext === 'env'));
 
     if (set.length > 1) {
       throw new Error(`More than one object for the same extension "${ext}" specified in a config/filters.json.`);
