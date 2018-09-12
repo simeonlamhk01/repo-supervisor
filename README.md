@@ -8,6 +8,23 @@ Serverless tool that detects secrets and passwords in your pull requests - one f
 
 <div style="text-align:center"><img src="docs/report.preview.png"/></div>
 
+## Requirement ENV
+- **`GITHUB_TOKEN`**
+
+    Github read repo token
+
+- **`JWT_SECRET`**
+
+    Secret for github access this service
+
+- **`.config.json`**
+
+    Slack incomming webhook url
+
+## Custom support extension
+
+- [Doc](CustomTokenizer.md)
+
 ## Help
 
 If you need help please visit [Wiki](https://github.com/auth0/repo-supervisor/wiki/) or [Gitter chat](https://gitter.im/repo-supervisor/Lobby).

@@ -21,5 +21,23 @@
         "checkObjectValues": true
       }
     }
+  },
+  {
+    "ext": "*",
+    "filters": ["entropy.meter/index.js"],
+    "parser": {
+      "module": "tokenizer/any/index.js",
+      "config": {
+      }
+    }
+  },
+  {
+    "ext": "env",
+    "filters": ["entropy.meter/index.js"],
+    "parser": {
+      "module": "tokenizer/env/index.js",
+      "config": {
+      }
+    }
   }
 ]
