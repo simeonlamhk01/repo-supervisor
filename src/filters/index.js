@@ -16,18 +16,14 @@ module.exports = {
       return [];
     }
 
-    const fileObj = path.parse(metadata.filename);
-    const ext = fileObj.ext;
-    const issues = [];
-    let set = getSet(ext);
+    const ext = path.parse(metadata.filename).ext;
+    const filename = path.parse(metadata.filename).name;
 
-    if (set.length === 0) {
-      // See if the "any file" filter is in use
-      if (fileObj.name.startsWith('.env')){
-        set = getSet('env');
-      }else{
-        set = getSet('*');
-      }
+    const issues = [];
+    let set = filtersList.filter(f => f.ext === ext || ( filename.match('^.env.*') && f.ext === 'env') );
+
+    if (set.length > 1) {
+      throw new Error(`More than one object for the same extension "${ext}" specified in a config/filters.json.`);
     }
 
     if (set.length === 0) {
