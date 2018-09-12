@@ -31,7 +31,7 @@ describe('Scenario: Run tool in CLI mode to detect secrets', () => {
     const msg = 'Not detected any secrets in files.';
 
     exec(`node ./dist/cli.js ${dir}`, (error, stdout) => {
-      expect(error.code).to.be.equal(1)
+      expect(error.code).to.be.equal(1);
       expect(stdout.trim()).to.be.equal(msg);
       cb();
     });
